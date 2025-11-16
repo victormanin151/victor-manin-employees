@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Longest Working Employee Pair</title>
+    <style>
+        body { font-family: Arial; margin: 40px; }
+        .card {
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 12px;
+            width: 400px;
+        }
+        h1 { margin-bottom: 20px; }
+        .value { font-size: 18px; margin-top: 10px; }
+    </style>
+</head>
+<body>
+<h1>Longest Employee Pair</h1>
+
+<div class="card">
+    <div class="value">
+        <strong>Employees:</strong>
+        <span th:text="${pair}"></span>
+    </div>
+
+    <div class="value">
+        <strong>Days Worked Together:</strong>
+        <span th:text="${days}"></span>
+    </div>
+</div>
+
+</body>
+</html>

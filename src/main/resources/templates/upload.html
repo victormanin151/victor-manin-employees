@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Upload CSV</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+
+        .card {
+            border: 1px solid #ccc;
+            border-radius: 12px;
+            padding: 30px;
+            width: 400px;
+            text-align: center;
+            background-color: white;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        input[type="file"], select, button {
+            margin-top: 15px;
+            width: 100%;
+            padding: 8px;
+            font-size: 14px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background-color: #45A049;
+        }
+
+        .message {
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .message.success {
+            color: green;
+        }
+
+        .message.error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+<div class="card">
+    <h2>Upload CSV File</h2>
+
+    <div th:if="${message}" class="message success" th:text="${message}"></div>
+    <div th:if="${error}" class="message error" th:text="${error}"></div>
+
+    <form th:action="@{/upload}" method="post" enctype="multipart/form-data">
+        <label>Select CSV File:</label>
+        <input type="file" name="file" accept=".csv" required>
+
+        <label>Select Date Format:</label>
+        <select name="dateFormat" required>
+            <option value="yyyy-MM-dd">yyyy-MM-dd</option>
+            <option value="MM-dd-yyyy">MM-dd-yyyy</option>
+            <option value="dd-MM-yyyy">dd-MM-yyyy</option>
+        </select>
+
+        <button type="submit">Upload</button>
+    </form>
+</div>
+
+</body>
+</html>
