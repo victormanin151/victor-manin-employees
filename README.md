@@ -155,24 +155,26 @@ You can select the date format before uploading:
 
 ## 🏗️ Project Structure
 
+```
 src/main/java/com.example.employees
 │
 ├── controller
-│ └── UploadController.java
-| └── ViewController.java
+│   ├── UploadController.java
+│   └── ViewController.java
 │
 ├── model
-│ ├── RecordEntry.java
-│ ├── Pairs.java
+│   ├── RecordEntry.java
+│   └── Pairs.java
 │
 ├── service
-│ └── EmployeeService.java
-| └── ProjectService.java
+│   ├── EmployeeService.java
+│   └── ProjectService.java
 │
 ├── util
-| └── CSVReader.java (old function not used)
-|
+│   └── CSVReader.java   (old function, not used)
+│
 └── VictorManinEmployeesApplication.java
+```
 
 ---
 
